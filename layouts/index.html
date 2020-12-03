@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main>
+  {{ partial "schools.html" . }}
+  {{ partial "experiences.html" . }}
+  {{ with .Site.Data.content }}
+  {{ range .info }}
+  <section class={{ cond (eq .half true) "half" "" }}>
+    <h2>{{ .name }}</h2>
+    <ul>
+      {{ range .points }}
+      <li>{{ . | markdownify }}</li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ end }}
+</main>
+{{ end }}

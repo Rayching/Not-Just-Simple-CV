@@ -1,0 +1,19 @@
+# https://github.com/gohugoio/hugoThemes#themetoml
+name = "Not Just Simple CV"
+license = "MIT"
+licenselink = "https://github.com/tomy0000000/Not-Just-Simple-CV/blob/main/LICENSE"
+description = "Curriculum vitae, but more than just simple"
+homepage = "https://github.com/tomy0000000/Not-Just-Simple-CV"
+tags = ["cv", "resume", "minimalist"]
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Tomy Hsieh"
+  homepage = "https://tomy.tech"
+  repo = "https://github.com/tomy0000000/Not-Just-Simple-CV"
+
+[original]
+  name = "Tyler Lawson"
+  homepage = "https://tyler-lawson.com"
+  repo = "https://github.com/tylerjlawson/simple-resume"
