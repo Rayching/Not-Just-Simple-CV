@@ -5,12 +5,14 @@
   {{ with .Site.Data.content }}
   {{ range .info }}
   <section class={{ cond (eq .half true) "half" "" }}>
-    <h2>{{ .name }}</h2>
-    <ul>
-      {{ range .points }}
-      <li>{{ . | markdownify }}</li>
-      {{ end }}
-    </ul>
+    <div>
+      <h2>{{ .name }}</h2>
+      <ul>
+        {{ range .points }}
+        <li>{{ . | markdownify }}</li>
+        {{ end }}
+      </ul>
+    </div>
   </section>
   {{ end }}
   {{ end }}
