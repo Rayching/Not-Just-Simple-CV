@@ -1,4 +1,5 @@
-{{ with .Site.Data.content }}
+{{ $data := index site.Data site.Language.Lang }}
+{{ with $data.content }}
 <header>
   <div class="page-title">
     <h1>{{ .name }}</h1>
@@ -9,7 +10,7 @@
       <i class="fas fa-envelope"></i> {{ .email }}
     </a>
     <a href="tel:{{ .phone }}"> <i class="fas fa-phone"></i> {{ .phone }} </a>
-    <a href="//{{ .website }}"> <i class="fas fa-globe"></i> {{ .website }} </a>
+    <a href="{{ .website }}"> <i class="fas fa-globe"></i> {{ .website }} </a>
   </div>
 </header>
 {{ end }}

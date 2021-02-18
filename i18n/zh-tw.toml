@@ -1,0 +1,14 @@
+[education]
+other = "學歷"
+
+[experiences]
+other = "經歷"
+
+[experiences_line]
+other = "{{ .company }}，{{ .position }} ({{ .location }})"
+
+[current]
+other = "目前"
+
+[all_rights_reserved]
+other = "保留一切權利。"

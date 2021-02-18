@@ -1,0 +1,14 @@
+[education]
+other = "Education"
+
+[experiences]
+other = "Experiences"
+
+[experiences_line]
+other = "{{ .position }} at {{ .company }} - {{ .location }}"
+
+[current]
+other = "Current"
+
+[all_rights_reserved]
+other = "All rights reserved."

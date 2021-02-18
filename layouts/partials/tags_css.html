@@ -5,4 +5,4 @@
   crossorigin="anonymous"
 />
 {{ $style := resources.Get "scss/main.scss" | toCSS }}
-<link rel="stylesheet" href="{{ trim $style.RelPermalink "/" }}" />
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
