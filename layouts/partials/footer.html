@@ -1,24 +1,31 @@
 {{ $data := index site.Data site.Language.Lang }}
 {{ with $data.content }}
 <footer>
-  <div>
-    <a href="mailto:{{ .email }}">
+  <div class="icons">
+    <a target="_blank" href="mailto:{{ .email }}">
       <i class="fas fa-envelope"></i>
     </a>
-    <a href="tel:{{ .phone }}">
+    <a target="_blank" href="tel:{{ .phone }}">
       <i class="fas fa-phone"></i>
     </a>
-    <a href="https://github.com/{{ .github }}">
+    <a target="_blank" href="https://github.com/{{ .github }}">
       <i class="fab fa-github"></i>
     </a>
-    <a href="https://www.linkedin.com/in/{{ .linkedin }}">
+    <a target="_blank" href="https://www.linkedin.com/in/{{ .linkedin }}">
       <i class="fab fa-linkedin"></i>
     </a>
-    <a href="{{ .website }}">
+    <a target="_blank" href="{{ .website }}">
       <i class="fas fa-globe"></i>
     </a>
   </div>
-  <span class="line">Copyright © {{ now.Format "2006"}} {{ .name }}.</span>
-  <span class="line">{{ i18n "all_rights_reserved" }}</span>
+  <div class="langs">
+    {{ range $.Site.Home.AllTranslations }}
+    <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+    {{ end }}
+  </div>
+  <div class="copyright">
+    <span>Copyright © {{ now.Format "2006"}} {{ .name }}.</span>
+    <span>{{ i18n "all_rights_reserved" }}</span>
+  </div>
 </footer>
 {{ end }}

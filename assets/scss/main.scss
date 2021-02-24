@@ -66,26 +66,26 @@ ul {
   padding: 20mm;
 }
 
-a {
-  color: $black;
-  display: inline-block;
-  font-size: 16px;
-  text-decoration: none;
-}
-
 header {
   border-bottom: 3px solid $black;
   margin-bottom: 15px;
   padding-bottom: 15px;
 
+  a {
+    color: $black;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  a + a {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
   .page-title {
     display: flex;
     justify-content: space-between;
-  }
-  
-  a + a {
-    display: block;
-    margin-top: .5rem;
   }
 }
 
@@ -100,7 +100,7 @@ div {
 section {
   column-span: all;
   margin-bottom: 1rem;
-  
+
   ul {
     break-inside: avoid;
   }
@@ -111,17 +111,43 @@ footer {
   margin-right: auto;
   color: $gray;
   text-align: center;
-  
+
   div {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icons {
+    a {
+      color: $black;
+      display: inline-block;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    a + a {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .langs {
+    a {
+      color: $black;
+      display: inline-block;
+      // text-decoration: none;
+    }
+
+    a + a {
+      display: inline-block;
+      border-left: 2px solid $black;
+      margin-left: 0.5rem;
+      padding-left: 0.5rem;
+    }
   }
   
-  a + a {
-    margin-left: .5rem;
-  }
-  
-  .line {
+  .copyright span {
+    color: $gray;
     display: inline-block;
+    font-size: 12px;
   }
 }
 
@@ -134,18 +160,17 @@ footer {
   .container {
     padding: 0;
   }
-  
+
   footer {
     display: none;
   }
 }
 
 @include media(">phone") {
-  
   section.half {
     column-span: none;
   }
-  
+
   section .heading-line {
     // prefixes added to work with html-pdf
     display: -webkit-box;
@@ -162,8 +187,8 @@ footer {
     a + a {
       display: inline-block;
       border-left: 2px solid $black;
-      margin-left: .5rem;
-      padding-left: .5rem;
+      margin-left: 0.5rem;
+      padding-left: 0.5rem;
     }
   }
 }

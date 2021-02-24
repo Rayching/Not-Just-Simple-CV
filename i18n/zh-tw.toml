@@ -8,7 +8,7 @@ other = "經歷"
 other = "{{ .company }}，{{ .position }} ({{ .location }})"
 
 [current]
-other = "目前"
+other = "至今"
 
 [all_rights_reserved]
 other = "保留一切權利。"
