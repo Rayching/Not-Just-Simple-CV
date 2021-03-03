@@ -26,15 +26,15 @@ h6 {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 4em;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 1.5em;
 }
 
 h3 {
-  font-size: 13px;
+  font-size: 1.25em;
   margin-bottom: 0;
 }
 
@@ -54,7 +54,7 @@ ul {
     text-indent: -9px;
     &::before {
       content: "-  ";
-      font-size: 16px;
+      font-size: 1.25em;
       display: inline;
     }
   }
@@ -74,7 +74,7 @@ header {
   a {
     color: $black;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.25em;
     text-decoration: none;
   }
 
@@ -90,20 +90,22 @@ header {
 }
 
 main {
-  column-count: 2;
-}
-
-div {
-  break-inside: avoid;
+  display: grid;
+  grid-template-columns: [left] 1fr [middle] 1fr [right];
+  grid-auto-flow: row;
 }
 
 section {
-  column-span: all;
+  grid-column: 1 / span 2;
   margin-bottom: 1rem;
 
   ul {
     break-inside: avoid;
   }
+}
+
+section.half {
+  grid-column: unset;
 }
 
 footer {
@@ -120,7 +122,7 @@ footer {
     a {
       color: $black;
       display: inline-block;
-      font-size: 24px;
+      font-size: 2em;
       text-decoration: none;
     }
 
@@ -147,7 +149,6 @@ footer {
   .copyright span {
     color: $gray;
     display: inline-block;
-    font-size: 12px;
   }
 }
 
@@ -160,17 +161,13 @@ footer {
   .container {
     padding: 0;
   }
-
+  
   footer {
     display: none;
   }
 }
 
 @include media(">phone") {
-  section.half {
-    column-span: none;
-  }
-
   section .heading-line {
     // prefixes added to work with html-pdf
     display: -webkit-box;
@@ -208,7 +205,7 @@ footer {
     &::before,
     &::after {
       background: transparent;
-      bottom: 12px;
+      bottom: 14px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
       content: " ";
       height: 10px;

@@ -4,18 +4,16 @@
   {{ partial "experiences.html" . }}
   {{ $data := index site.Data site.Language.Lang }}
   {{ with $data.content }}
-  {{ range .info }}
-  <section class={{ cond (eq .half true) "half" "" }}>
-    <div>
+    {{ range .info }}
+    <section class="block{{ cond (eq .half true) " half" "" }}">
       <h2>{{ .name }}</h2>
       <ul>
         {{ range .points }}
         <li>{{ . | markdownify }}</li>
         {{ end }}
       </ul>
-    </div>
-  </section>
-  {{ end }}
+    </section>
+    {{ end }}
   {{ end }}
 </main>
 {{ end }}

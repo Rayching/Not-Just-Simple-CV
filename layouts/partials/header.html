@@ -6,11 +6,18 @@
     <div class="address">{{ .address }}</div>
   </div>
   <div>
-    <a href="mailto:{{ .email }}">
-      <i class="fas fa-envelope"></i> {{ .email }}
+    <a target="_blank" href="mailto:{{ .email }}">
+      <i class="fas fa-envelope"></i>
+      {{ .email }}
     </a>
-    <a href="tel:{{ .phone }}"> <i class="fas fa-phone"></i> {{ .phone }} </a>
-    <a href="{{ .website }}"> <i class="fas fa-globe"></i> {{ .website }} </a>
+    <a target="_blank" href="tel:{{ .phone }}">
+      <i class="fas fa-phone"></i>
+      {{ .phone }}
+    </a>
+    <a target="_blank" href="{{ .website }}">
+      <i class="fas fa-globe"></i>
+      {{ .website }}
+    </a>
   </div>
 </header>
 {{ end }}
