@@ -4,9 +4,6 @@ other = "Education"
 [experiences]
 other = "Experiences"
 
-[experiences_line]
-other = "{{ .position }} at {{ .company }} - {{ .location }}"
-
 [current]
 other = "Current"
 

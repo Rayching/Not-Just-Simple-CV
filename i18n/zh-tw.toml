@@ -4,9 +4,6 @@ other = "學歷"
 [experiences]
 other = "經歷"
 
-[experiences_line]
-other = "{{ .company }}，{{ .position }} ({{ .location }})"
-
 [current]
 other = "至今"
 

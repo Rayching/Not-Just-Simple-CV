@@ -168,7 +168,7 @@ footer {
 }
 
 @include media(">phone") {
-  section .heading-line {
+  section .heading {
     // prefixes added to work with html-pdf
     display: -webkit-box;
     display: -ms-flexbox;
@@ -176,6 +176,10 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    
+    div:nth-last-child(1) {
+      text-align: right;
+    }
   }
 }
 

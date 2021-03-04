@@ -5,11 +5,21 @@
     <h2>{{ i18n "experiences" }}</h2>
     {{ range . }}
     <div>
-      <div class="heading-line">
-        <h3>{{ i18n "experiences_line" . }}</h3>
-        <h3>
-          {{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}
-        </h3>
+      <div class="heading">
+        <div>
+          <h3>{{ .position }}</h3>
+          <p>
+            <em>{{ .company }}</em>
+          </p>
+        </div>
+        <div>
+          <h3>
+            {{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}
+          </h3>
+          <p>
+            <em>{{ .location }}</em>
+          </p>
+        </div>
       </div>
       <ul>
         {{ range .points }}

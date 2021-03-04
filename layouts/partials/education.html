@@ -5,15 +5,22 @@
     <h2>{{ i18n "education" }}</h2>
     {{ range . }}
     <div class="education">
-      <div class="heading-line">
-        <h3>{{ .name }} - {{ .location }}</h3>
-        <h3>{{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}</h3>
+      <div class="heading">
+        <div>
+          <h3>{{ .name }}</h3>
+          {{ range .degrees }}
+          <p>
+            <em>{{ . }}</em>
+          </p>
+          {{ end }}
+        </div>
+        <div>
+          <h3>{{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}</h3>
+          <p>
+            <em>{{ .location }}</em>
+          </p>
+        </div>
       </div>
-      {{ range .degrees }}
-      <p>
-        <em>{{ . }}</em>
-      </p>
-      {{ end }}
       <ul>
         {{ range .points }}
         <li>{{ . | markdownify }}</li>
