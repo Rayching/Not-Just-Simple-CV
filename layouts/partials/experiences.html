@@ -1,33 +1,31 @@
 {{ $data := index site.Data site.Language.Lang }}
 {{ with $data.content.experiences }}
 <section>
+  <h2>{{ i18n "experiences" }}</h2>
+  {{ range . }}
   <div>
-    <h2>{{ i18n "experiences" }}</h2>
-    {{ range . }}
-    <div>
-      <div class="heading">
-        <div>
-          <h3>{{ .position }}</h3>
-          <p>
-            <em>{{ .company }}</em>
-          </p>
-        </div>
-        <div>
-          <h3>
-            {{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}
-          </h3>
-          <p>
-            <em>{{ .location }}</em>
-          </p>
-        </div>
+    <div class="heading">
+      <div>
+        <h3>{{ .position }}</h3>
+        <p>
+          <em>{{ .company }}</em>
+        </p>
       </div>
-      <ul>
-        {{ range .points }}
-        <li>{{ . | markdownify }}</li>
-        {{ end }}
-      </ul>
+      <div>
+        <h3>
+          {{ .startdate }} - {{ if .enddate }}{{ .enddate }}{{ else }}{{ i18n "current" }}{{ end }}
+        </h3>
+        <p>
+          <em>{{ .location }}</em>
+        </p>
+      </div>
     </div>
-    {{ end }}
+    <ul>
+      {{ range .points }}
+      <li>{{ . | markdownify }}</li>
+      {{ end }}
+    </ul>
   </div>
+  {{ end }}
 </section>
 {{ end }}

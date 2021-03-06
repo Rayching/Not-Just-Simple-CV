@@ -98,10 +98,14 @@ main {
 section {
   grid-column: 1 / span 2;
   margin-bottom: 1rem;
+  display: inline-block;
+  break-inside: avoid;
 
-  ul {
-    break-inside: avoid;
-  }
+  // li {
+  //   // break-before: page;
+  //   break-inside: avoid;
+  //   break-after: avoid;
+  // }
 }
 
 section.half {
