@@ -48,6 +48,11 @@ a {
   color: $black;
 }
 
+a > i {
+  margin-left: .25em;
+  margin-right: .25em;
+}
+
 ul {
   margin: 0;
   padding-bottom: 0.5rem;
