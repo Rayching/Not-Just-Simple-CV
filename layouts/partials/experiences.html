@@ -22,7 +22,18 @@
     </div>
     <ul>
       {{ range .points }}
-      <li>{{ . | markdownify }}</li>
+        {{ if eq (printf "%T" .) "string" }}
+          <li>{{ . | markdownify }}</li>
+        {{ else }}
+          <li>
+            {{ .name }}
+            <ul>
+              {{ range .details }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ end }}
       {{ end }}
     </ul>
   </div>
