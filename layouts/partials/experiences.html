@@ -3,7 +3,7 @@
 <section>
   <h2>{{ i18n "experiences" }}</h2>
   {{ range . }}
-  <div>
+  <div class="experience{{ if and (isset . "pagebreak") (.pagebreak) }} page-break{{ end }}">
     <div class="heading">
       <div>
         <h3>{{ .position }}</h3>

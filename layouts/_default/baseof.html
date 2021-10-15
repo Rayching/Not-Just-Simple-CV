@@ -2,15 +2,15 @@
 <html>
   <head>
     <title>{{ site.Title }}</title>
-    
+
     <!-- Favicon -->
     {{ if isset site.Params "favicon" }}
-      <link rel="icon" href="/{{ site.Params.favicon }}">
+    <link rel="icon" href="/{{ site.Params.favicon }}" />
     {{ end }}
-    
+
     <!-- CSS Tags -->
     {{- partial "tags_css.html" . -}}
-    
+
     <!-- Google Analytics -->
     {{ if isset site.Params "googleanalytics" }}
       <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -22,7 +22,7 @@
         gtag("config", "{{ site.Params.GoogleAnalytics }}");
       </script>
     {{ end }}
-    
+
     <!-- Facebook Pixel -->
     {{ if isset site.Params "facebookpixel" }}
       <script>
@@ -41,6 +41,16 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{ site.Params.facebookPixel }}&ev=PageView&noscript=1" />
       </noscript>
     {{ end }}
+    <script>
+      window.addEventListener("beforeprint", function (event) {
+        let script = document.createElement("script");
+        script.src = "https://unpkg.com/pagedjs/dist/paged.polyfill.js";
+        document.head.appendChild(script);
+      });
+      window.addEventListener("afterprint", function(event) { 
+        window.location.reload();
+      });
+    </script>
   </head>
   <body>
     <div class="page">

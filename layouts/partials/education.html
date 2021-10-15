@@ -3,7 +3,7 @@
 <section>
   <h2>{{ i18n "education" }}</h2>
   {{ range . }}
-  <div class="education">
+  <div class="education{{ if and (isset . "pagebreak") (.pagebreak) }} page-break{{ end }}">
     <div class="heading">
       <div>
         <h3>{{ .name }}</h3>

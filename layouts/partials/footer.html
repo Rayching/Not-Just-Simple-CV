@@ -17,6 +17,12 @@
     <a target="_blank" href="{{ .website }}">
       <i class="fas fa-globe"></i>
     </a>
+    {{ $pdf := print "static/" site.Language.Lang ".pdf" }}
+    {{ if (fileExists $pdf) -}}
+      <a target="_blank" href="{{ print site.Language.Lang ".pdf" | relURL }}">
+        <i class="fas fa-print"></i>
+      </a>
+    {{- end }}
   </div>
   <div class="langs">
     {{ range $.Site.Home.AllTranslations }}
@@ -24,7 +30,7 @@
     {{ end }}
   </div>
   <div class="copyright">
-    <span>Copyright © {{ now.Format "2006"}} {{ .name }}.</span>
+    <span>Copyright © {{ now.Format "2006" }} {{ .name }}.</span>
     <span>{{ i18n "all_rights_reserved" }}</span>
   </div>
 </footer>

@@ -49,8 +49,8 @@ a {
 }
 
 a > i {
-  margin-left: .25em;
-  margin-right: .25em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 ul {
@@ -108,12 +108,7 @@ section {
   margin-bottom: 1rem;
   display: inline-block;
   break-inside: avoid;
-
-  // li {
-  //   // break-before: page;
-  //   break-inside: avoid;
-  //   break-after: avoid;
-  // }
+  page-break-inside: avoid;
 }
 
 section.half {
@@ -154,23 +149,51 @@ footer {
       padding-left: 0.5rem;
     }
   }
-  
+
   .copyright span {
     color: $gray;
     display: inline-block;
   }
 }
 
-@page {
-  size: A4 portrait;
-  margin: 20mm;
-}
+@include media("print") {
+  @page {
+    size: A4 portrait;
+    margin: 0.75in;
+  }
 
-@media print {
   .container {
     padding: 0;
   }
-  
+
+  div {
+    float: none !important;
+    position: static !important;
+    display: inline;
+    box-sizing: content-box !important;
+  }
+
+  section {
+    div {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    div.page-break {
+      break-after: all;
+      page-break-after: always;
+    }
+
+    div.page-break + hr {
+      display: none;
+    }
+
+    ul {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+
   footer {
     display: none;
   }
@@ -185,7 +208,7 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    
+
     div:nth-last-child(1) {
       text-align: right;
       flex: 0 0 30%;
